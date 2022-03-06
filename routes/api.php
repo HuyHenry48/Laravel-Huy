@@ -18,6 +18,10 @@ use Illuminate\Support\Facades\Route;
  * Buyers
  */
 Route::resource('buyers','App\Http\Controllers\Buyer\BuyerController', ['only' => ['index', 'show']]);
+Route::resource('buyers.products','App\Http\Controllers\Buyer\BuyerProductController', ['only' => ['index']]);
+Route::resource('buyers.transactions','App\Http\Controllers\Buyer\BuyerTransactionController', ['only' => ['index']]);
+Route::resource('buyers.sellers','App\Http\Controllers\Buyer\BuyerSellerController', ['only' => ['index']]);
+Route::resource('buyers.categories','App\Http\Controllers\Buyer\BuyerCategoryController', ['only' => ['index']]);
 /**
  * Categories
  */
@@ -34,6 +38,8 @@ Route::resource('sellers','App\Http\Controllers\Seller\SellerController', ['only
  * Transactions
  */
 Route::resource('transactions','App\Http\Controllers\Transaction\TransactionController', ['only' => ['index', 'show']]);
+Route::resource('transactions.categories','App\Http\Controllers\Transaction\TransactionCategoryController', ['only' => ['index']]);
+Route::resource('transactions.sellers','App\Http\Controllers\Transaction\TransactionSellerController', ['only' => ['index']]);
 /**
  * Users
  */
